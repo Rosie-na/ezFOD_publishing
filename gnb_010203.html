@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ezFOD 샘미트코리아</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+	    <meta name="description" content="ezFOD 샘미트코리아">
+        <link href="css/common.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/sidebar.js"></script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header>
+                <!-- 상단 메뉴 영역 시작-->
+                <div class="gnb-wrap">
+                    <div class="gnb">
+                        <h1 class="logo">ezFOD</h1>
+                        <ul>
+                            <li class="active"><a href="#">품질관리</a></li>
+                            <li><a href="#">수급정보</a></li>
+                            <li><a href="#">통계정보</a></li>
+                            <li><a href="#">환경설정</a></li>
+                        </ul>
+                    </div>
+                    <div class="util">
+                        <button type="button" class="btn-Line-gray-s">로그아웃</button>
+                    </div>
+                </div>
+                <!-- 상단 메뉴 영역 끝-->
+            </header>
+            
+            <main>
+                <!--좌측 사이드바 영역 시작-->
+                <section class="sidebar-left sidebar-w300">
+                    <div class="side-wrap side-wrap-left">
+                        <div class="title-wrap">
+                            <h5>상세조회</h5>
+                        </div>
+                        <div>
+                            <label class="label-normal">분류기간</label>
+                            <div class="tab-type1 mB10">
+                                <ul>
+                                    <li class="active"><button type="button">당일</button></li>
+                                    <li><button type="button">1개월</button></li>
+                                    <li><button type="button">3개월</button></li>
+                                    <li><button type="button">선택</button></li>
+                                </ul>
+                            </div>
+                            
+                            <input type="date" name="" placeholder="선택" required
+                            value={props.date}
+                            onChange={props.changeHandler}
+                            id='dateSelect'
+                            min={props.isFullRange ? undefined : getDate() />
+                        </div>
+                        <div>
+                            <label class="label-normal">농장명</label>
+                            <select name="농장명" required>
+                                <option>전체</option>
+                                <option>한라농장</option>
+                                <option>덕산농장</option>
+                                <option>신양축산 2농장</option>
+                                <option>정진고양농장</option>
+                                <option>율곡농장</option>
+                                <option>경북농장</option>
+                                <option>지명농장</option>
+                                <option>선용농장</option>
+                                <option>안성농장</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="label-normal">정렬</label>
+                            <select name="농장명" required>
+                                <option>최신순</option>
+                                <option>오래된순</option>
+                                <option>A품질순</option>
+                                <option>B품질순</option>
+                                <option>C품질순</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn-primary-l mT5">
+                            조회
+                        </button>
+                    </div>
+                    <div class="btn-wrap">
+                        <button type="button" class="hide-sidebar-left">
+                            <img src="images/icon/chevron-left.svg">
+                        </button>
+                        
+                        <button type="button" class="show-sidebar-left" style="display: none;">
+                            <img src="images/icon/chevron-right.svg">
+                        </button>
+                    </div>
+                </section>
+                <!--좌측 사이드바 영역 끝-->
+
+                <!--컨텐츠 영역 시작-->
+                <section class="content">
+                    <div class="lnb-wrap">
+                        <div class="lnb">
+                            <ul>
+                                <li><a href="#">분류현황</a></li>
+                                <li class="active"><a href="#">작업관리</a></li>
+                                <li><a href="#">품질이력</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cont-wrap">
+                        <div class="item">
+                            <!--목록 리스트 영역 시작-->
+                            <div class="talbe-box">
+                                <div class="board-type1">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:60px;" />
+                                            <col style="width:15%;" />
+                                            <col style="width:15%;" />
+                                            <col />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox" id=""></th>
+                                                <th>분류일자</th>
+                                                <th>농장명</th>
+                                                <th>수량(개)</th>
+                                                <th><P class="tag-type1-blue">A품질</P></th>
+                                                <th><P class="tag-type1-yellow">B품질</P></th>
+                                                <th><P class="tag-type1-red">C품질</P></th>
+                                                <th>진행상태</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>경북농장</td>
+                                                <td><p class="gray-500">0</p>/40</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td><P class="tag-type3-gray">대기</P></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>덕산농장</td>
+                                                <td><p class="gray-500">20</p>/40</td>
+                                                <td>5</td>
+                                                <td>10</td>
+                                                <td>5</td>
+                                                <td><P class="tag-type3-blue">진행중</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" id=""></td>
+                                                <td>2023.07.10</td>
+                                                <td>한라농장</td>
+                                                <td><p>40</p>/40</td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>10</td>
+                                                <td><P class="tag-type3-green">완료</P></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--목록 리스트 영역 끝-->
+
+                            <!--페이지네이션/버튼 영역 시작-->
+                            <div class="btn-box">
+                                <div>
+                                    <button type="button" class="btn-Line-gray-m">선택 삭제</button>    
+                                </div>
+                                <div> 
+                                    <ul class="page-num">
+                                        <li class="first"><a href="#"><img src="images/icon/chevrons-left-s.svg"></a></li>
+                                        <li class="prev"><a href="#"><img src="images/icon/chevron-left-s.svg"></a></li>
+                                        <li><a href="#" class="active">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li class="next"><a href="#"><img src="images/icon/chevron-right-s.svg"></a></li>
+                                        <li class="last"><a href="#"><img src="images/icon/chevrons-right-s.svg"></a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn-Line-primary-m mR5">
+                                        엑셀 다운로드</button>
+                                    <button type="button" class="btn-primary-m">
+                                        등록
+                                    </button>    
+                                </div>
+                                
+                            </div>
+                            <!--페이지네이션/버튼 영역 끝-->
+                        </div>
+                    </div>
+
+                </section>
+                <!--컨텐츠 영역 끝-->
+
+                <!--우측 사이드바 영역 시작-->
+                <section class="sidebar-right sidebar-w300">
+                    <!--작업수정 영역 시작-->
+                    <div class="side-wrap side-wrap-right">
+                        <div class="title-wrap">
+                            <h5>덕산농장</h5>
+                            <p class="tag-type3-blue">진행중</p>
+                            <!--<p class="tag-type3-gray">대기</p>-->
+                        </div>
+                        <div>
+                            <label class="label-normal">분류일자</label>
+                            <input type="date" name="" placeholder="선택" value="2023-07-10" required
+                            value={props.date}
+                            onChange={props.changeHandler}
+                            id='dateSelect'
+                            min={props.isFullRange ? undefined : getDate() />
+                        </div>
+                        <div>
+                            <label class="label-normal">농장명</label>
+                            <select name="농장명" required>
+                                <option value="" disabled>선택</option>
+                                <option>한라농장</option>
+                                <option selected>덕산농장</option>
+                                <option>신양축산 2농장</option>
+                                <option>정진고양농장</option>
+                                <option>율곡농장</option>
+                                <option>경북농장</option>
+                                <option>지명농장</option>
+                                <option>선용농장</option>
+                                <option>안성농장</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="label-normal">수량(개)</label>
+                            <input type="number" name="" placeholder="0" value="20"/>
+                        </div>
+                        <div class="graph-wrap line-bottom">
+                            <div>
+                                <div class="label-wrap">
+                                    <label class="label-normal">전체</label>
+                                    <p>20개</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress bg-green" style="width: 50%;"></div>
+                                </div>    
+                            </div>
+                            <div>
+                                <div class="label-wrap">
+                                    <label class="label-normal">A품질</label>
+                                    <p>5개</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress bg-blue" style="width: 25%;"></div>
+                                </div>    
+                            </div>
+                            <div>
+                                <div class="label-wrap">
+                                    <label class="label-normal">B품질</label>
+                                    <p>10개</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress bg-yellow" style="width: 50%;"></div>
+                                </div>    
+                            </div>
+                            <div>
+                                <div class="label-wrap">
+                                    <label class="label-normal">C품질</label>
+                                    <p>5개</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress bg-red" style="width: 25%;"></div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="text-wrap">
+                            <label class="label-horiz">수정일시</label>
+                            <p>2023.07.10 (03:50:20)</p>
+                        </div>
+                        <button type="button" class="btn-primary-l mT5">
+                            수정
+                        </button>
+                    </div>
+                    <!--작업수정 영역 끝-->
+
+                    <div class="btn-wrap">
+                        <button type="button" class="hide-sidebar-right">
+                            <img src="images/icon/chevron-right.svg">
+                        </button>
+                        
+                        <button type="button" class="show-sidebar-right" style="display: none;" >
+                            <img src="images/icon/chevron-left.svg">
+                        </button>
+                    </div>
+                </section>
+                <!--우측 사이드바 영역 끝-->
+            </main>
+
+        </div>
+    </body>
+</html>
