@@ -78,6 +78,7 @@ input:disabled, textarea:disabled {
     background: var(--input-bg-disabled) !important;
     color: var(--text-disabled) !important;
     cursor: default;
+    opacity: 1 !important;
 }
 
 input[type='date'] {
@@ -388,6 +389,12 @@ button:focus {
 .btn-Line-gray-l:hover, .btn-Line-gray-m:hover, .btn-Line-gray-s:hover {
     border: 1px solid var(--btn-primary-line-normal);
     color: var(--text-primary);
+}
+
+.btn-refresh {
+    width: 16px;
+    height: 16px;
+    background: url('../images/icon/refresh.svg') no-repeat;
 }
 
 
