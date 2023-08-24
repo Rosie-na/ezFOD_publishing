@@ -547,3 +547,11 @@ sub-Content
     background: url('../images/icon/close.svg') no-repeat;
     background-size: cover;
 }
+
+.modal-wrap-type1 .caption{
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    margin-right: 6px;
+}
