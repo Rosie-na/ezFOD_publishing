@@ -62,7 +62,6 @@ h3 {font-size: 24px; line-height: 34px; font-weight: 600; font-style: normal; di
 h4 {font-size: 22px; line-height: 30px; font-weight: 600; font-style: normal; display: inline-block;}
 h5 {font-size: 18px; line-height: 26px; font-weight: 500; font-style: normal; display: inline-block;} 
 p {display: inline-block;}
-h1, h2, h3, h4, h5, p {cursor: default;}
 
 
 /*--------------------
@@ -342,7 +341,6 @@ main {
     align-items: center;
     position: relative;
     height: 48px;
-    width: 52px;
     color: var(--text-secondary);
     font-size: 15px;
     font-weight: 500;

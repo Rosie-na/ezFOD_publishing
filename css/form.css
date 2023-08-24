@@ -397,6 +397,19 @@ button:focus {
     background: url('../images/icon/refresh.svg') no-repeat;
 }
 
+.btn-modal, .btn-modal:link, .btn-modal:visited {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary) !important;
+    text-decoration: underline;
+}
+
+.btn-modal:hover, .btn-modal:active {
+    color: var(--text-tertiary) !important;
+    text-decoration: underline;
+}
+
 
 /* tab */
 .tab-type1 ul {
