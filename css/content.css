@@ -80,6 +80,7 @@ sub-Content
 .sidebar-w300 {flex-basis: 300px;}
 .sidebar-w30 {flex-basis: 30px;}
 
+
 /* 메인 테이블 */
 .board-type1 {
     position: relative; 
@@ -256,6 +257,68 @@ sub-Content
 .tooltip:hover .tooltip-img{ 
     display: block;
 }
+
+
+/* 우측 패널 테이블 */
+.board-type4 {
+    position: relative; 
+    width: 100%;
+    /*max-height: 410px;*/
+    clear: both; 
+    background: #fff;
+    overflow: auto;
+}
+
+.board-type4::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.board-type4::-webkit-scrollbar-thumb {
+    background: #CBCCCE;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.board-type4 table {
+    width: 100%; 
+    line-height: 20px;
+}
+
+.board-type4 thead th {
+    height: 30px;
+    padding: 0 4px;
+    color: var(--text-tertiary);
+    text-align: center; 
+    font-size: 14px;
+    font-weight: 500;
+    border: 0px;
+    cursor: default;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.board-type4 tbody tr {
+    border-bottom: 1px solid var(--border-light);
+    cursor: pointer;
+}
+
+.board-type4 tbody tr:hover{
+    background: var(--bg-normal);
+}
+
+.board-type4 tbody tr.active{
+    background: var(--bg-normal);
+}
+
+.board-type4 tbody td {
+    height: 34px;
+    padding: 0 4px;
+    color: var(--text-normal);
+    text-align: center; 
+    font-size: 14px;
+    font-weight: 400;
+}
  
 
 /* 페이지네이션 */
@@ -316,7 +379,7 @@ sub-Content
 }
 
 
-/* tag */
+/* 태그 */
 .tag-type1-blue, .tag-type1-yellow, .tag-type1-red {
     font-size: 14px;
     font-weight: 500;
@@ -475,6 +538,7 @@ sub-Content
     background: var(--bg-white);
     line-height: 20px !important;
 }
+
 
 /* 가로 막대 그래프 */
 @keyframes progress-bar {
