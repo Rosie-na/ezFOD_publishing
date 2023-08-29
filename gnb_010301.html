@@ -53,11 +53,26 @@
                                 </ul>
                             </div>
                             
+                            <!-- 당일 일때 -->
                             <input type="date" name="" placeholder="선택" required
+                            value="2023-07-10"
+                            onChange={props.changeHandler}
+                            id='dateSelect'
+                            min={props.isFullRange ? undefined : getDate() />
+
+                            <!-- 기간 선택 일때 
+                            <input type="date" name="" placeholder="시작일" required
                             value={props.date}
                             onChange={props.changeHandler}
                             id='dateSelect'
                             min={props.isFullRange ? undefined : getDate() />
+                                
+                            <input type="date" name="" placeholder="종료일" required
+                            value={props.date}
+                            onChange={props.changeHandler}
+                            id='dateSelect'
+                            min={props.isFullRange ? undefined : getDate() class="mT10"/> -->
+                            
                         </div>
                         <div>
                             <label class="label-normal">농장명</label>
