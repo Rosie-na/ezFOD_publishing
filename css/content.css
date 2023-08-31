@@ -4,6 +4,7 @@ sub-Content
 .mT0  {margin-top: 0!important;}
 .mT4 {margin-top: 4px;}
 .mT5 {margin-top: 5px;}
+.mT8 {margin-top: 8px;}
 .mT10 {margin-top: 10px;}
 .mT20 {margin-top: 20px;}
 .mT30 {margin-top: 30px;}
@@ -25,7 +26,9 @@ sub-Content
 .mL30 {margin-left: 30px;}
 .mL40 {margin-left: 40px;}
 .mL50 {margin-left: 50px;}
+.mB2 {margin-bottom: 2px;}
 .mB5 {margin-bottom: 5px;}
+.mB14 {margin-bottom: 14px;}
 .mB10 {margin-bottom: 10px;}
 .mB20 {margin-bottom: 20px;}
 .mB30 {margin-bottom: 30px;}
@@ -79,6 +82,8 @@ sub-Content
 
 .sidebar-w300 {flex-basis: 300px;}
 .sidebar-w30 {flex-basis: 30px;}
+
+.pointer {cursor: pointer;}
 
 
 /* 메인 테이블 */
@@ -263,7 +268,7 @@ sub-Content
 .board-type4 {
     position: relative; 
     width: 100%;
-    /*max-height: 410px;*/
+    /*max-height: 300px;*/
     clear: both; 
     background: #fff;
     overflow: auto;
@@ -300,26 +305,61 @@ sub-Content
 
 .board-type4 tbody tr {
     border-bottom: 1px solid var(--border-light);
-    cursor: pointer;
-}
-
-.board-type4 tbody tr:hover{
-    background: var(--bg-normal);
-}
-
-.board-type4 tbody tr.active{
-    background: var(--bg-normal);
+    cursor: default;
 }
 
 .board-type4 tbody td {
     height: 34px;
     padding: 0 4px;
-    color: var(--text-normal);
     text-align: center; 
     font-size: 14px;
     font-weight: 400;
 }
- 
+
+.board-type4 tbody tr.more {
+    cursor: pointer;
+}
+
+.board-type4 tbody tr.content {
+    background: var(--bg-normal);
+}
+
+.board-type4 tbody tr.content td {
+    padding: 4px 0px;
+    cursor: auto;
+}
+
+.board-type4 tbody tr.content td.td-w50 div {
+    padding: 4px;
+    width: 50%;
+    display: inline-block;
+    color: var(--text-secondary);
+}
+
+.board-type4 tbody tr.content td.td-w33 div {
+    padding: 4px;
+    width: 33%;
+    display: inline-block;
+    color: var(--text-secondary);
+}
+
+.board-type4 tbody tr.content td.td-w30 div {
+    padding: 4px;
+    width: 30%;
+    display: inline-block;
+    color: var(--text-secondary);
+}
+
+.board-type4 tbody tr.content td div.subtext {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    width: 100% !important;
+}
+
+.board-type4 tbody tr.on {    
+    border-bottom: 1px solid var(--border-normal);
+}
+
 
 /* 페이지네이션 */
 .page-num {
@@ -482,7 +522,7 @@ sub-Content
 
 .tag-type3-gray {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 500 !important;
     color: var(--tag-gray-text);
     padding: 0px 6px;
     align-items: center;
@@ -497,7 +537,7 @@ sub-Content
 
 .tag-type3-blue {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 500 !important;
     color: var(--tag-blue-text);
     padding: 0px 6px;
     align-items: center;
@@ -512,7 +552,7 @@ sub-Content
 
 .tag-type3-green {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 500 !important;
     color: var(--tag-primary-text);
     padding: 0px 6px;
     align-items: center;
@@ -539,6 +579,29 @@ sub-Content
     line-height: 20px !important;
 }
 
+.tag-up {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--red-900);
+}
+
+.tag-up::before {
+    content: url('../images/icon/chevron-up-xs.svg');
+    margin-right: 3px;    
+    vertical-align: middle;
+}
+ 
+.tag-down {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--blue-900);
+}
+
+.tag-down::before {
+    content: url('../images/icon/chevron-down-xs.svg');
+    margin-right: 3px;    
+    vertical-align: middle;
+}
 
 /* 가로 막대 그래프 */
 @keyframes progress-bar {
@@ -585,7 +648,7 @@ sub-Content
 
 .modal-wrap-type1 {
     display: none;
-    position: absolute;
+    position: absolute; 
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -618,4 +681,11 @@ sub-Content
     font-weight: 400;
     margin-bottom: 5px;
     margin-right: 6px;
+}
+
+.modal-wrap-type1 .filter-wrap{
+    height: 43px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

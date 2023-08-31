@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ezFOD 샘미트코리아</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+	    <meta name="description" content="ezFOD 샘미트코리아">
+        <link href="css/common.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/sidebar.js"></script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header>
+                <!-- 상단 메뉴 영역 시작-->
+                <div class="gnb-wrap">
+                    <div class="gnb">
+                        <h1 class="logo">ezFOD</h1>
+                        <ul>
+                            <li><a href="#">품질관리</a></li>
+                            <li><a href="#">수급정보</a></li>
+                            <li><a href="#">출하정보</a></li>
+                            <li class="active"><a href="#">통계정보</a></li>
+                            <li><a href="#">환경설정</a></li>
+                        </ul>
+                    </div>
+                    <div class="util">
+                        <button type="button" class="btn-Line-gray-s">로그아웃</button>
+                    </div>
+                </div>
+                <!-- 상단 메뉴 영역 끝-->
+            </header>
+            
+            <main>
+                <!--좌측 사이드바 영역 시작-->
+                <section class="sidebar-left sidebar-w300">
+                    <div class="side-wrap side-wrap-left">
+                        <div class="title-wrap">
+                            <h5>상세조회</h5>
+                        </div>
+                        <div>
+                            <label class="label-normal">기간</label>
+                            <div class="tab-type1 mB10">
+                                <ul>
+                                    <li class="active"><button type="button">3개월</button></li>
+                                    <li><button type="button">6개월</button></li>
+                                    <li><button type="button">1년</button></li>
+                                    <li><button type="button">선택</button></li>
+                                </ul>
+                            </div>
+
+                            <input type="date" name="" placeholder="시작일" required
+                            value={props.date}
+                            onChange={props.changeHandler}
+                            id='dateSelect'
+                            min={props.isFullRange ? undefined : getDate() />
+                                
+                            <input type="date" name="" placeholder="종료일" required
+                            value={props.date}
+                            onChange={props.changeHandler}
+                            id='dateSelect'
+                            min={props.isFullRange ? undefined : getDate() class="mT10"/> 
+                        </div>                        
+                        <di>
+                            <div>
+                                <label class="label-normal">품질분류</label>
+                            </div>
+                            <div class="checkbox-wrap">
+                                <label class="label-checkbox"><input type="checkbox" name="type" value="" checked>A품질</label>
+                                <label class="label-checkbox"><input type="checkbox" name="type" value="" checked>B품질</label>
+                                <label class="label-checkbox"><input type="checkbox" name="type" value="" checked>C품질</label>
+                            </div>
+                        </di>
+                        <button type="button" class="btn-primary-l mT5">
+                            조회
+                        </button>
+                    </div>
+                    <div class="btn-wrap">
+                        <button type="button" class="hide-sidebar-left">
+                            <img src="images/icon/chevron-left.svg">
+                        </button>
+                        
+                        <button type="button" class="show-sidebar-left" style="display: none;">
+                            <img src="images/icon/chevron-right.svg">
+                        </button>
+                    </div>
+                </section>
+                <!--좌측 사이드바 영역 끝-->
+
+                <!--컨텐츠 영역 시작-->
+                <section class="content-type2">
+                    <div class="cont-wrap">
+                        <div class="item-row">                            
+                            <div class="item">                           
+                                <div class="title-box">
+                                    <div>
+                                        <h5>분류두수 순위</h5>
+                                    </div>                                
+                                    <select class="select-s align-right mR3" name="정렬" required>
+                                        <option>전체순</option>
+                                        <option>A품질순</option>
+                                        <option>B품질순</option>
+                                        <option>C품질순</option>
+                                    </select>
+                                </div>
+                                <!--목록 리스트 영역 시작-->
+                                <div class="table-box" style="height:350px; overflow:auto;">
+                                    <div class="board-type1">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:10%;" />
+                                                <col />
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>순위</th>
+                                                    <th>농장명</th>
+                                                    <th>전체</th>
+                                                    <th>A품질</th>
+                                                    <th>B품질</th>
+                                                    <th>C품질</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>도드람</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>협신식품</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>삼성식품</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>김해김축공</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>농협부천</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>농협음성</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>김해축공</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>삼성식품</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--목록 리스트 영역 끝-->
+                            </div>
+
+                            <div class="item">
+                                <!--그래프 영역 시작-->                      
+                                <div class="title-box">
+                                    <div>
+                                        <h5>농장별 품질비교</h5>
+                                    </div>
+                                </div>
+                                <div class="graph-box" style="height:350px;">
+                                    그래프 영역입니다
+                                </div>
+                                <!--그래프 영역 끝-->
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <!--그래프 영역 시작-->                      
+                            <div class="title-box">
+                                <div>
+                                    <h5 class="mR5">기간별 품질추이</h5>
+                                    <p class="tag-type3-green">협신식품</p>
+                                </div>
+                            </div>
+                            <div class="graph-box">
+                                그래프 영역입니다
+                            </div>
+                            <!--그래프 영역 끝-->
+                        </div>
+                    </div>
+
+                </section>
+                <!--컨텐츠 영역 끝-->
+            </main>
+
+        </div>
+    </body>
+</html>

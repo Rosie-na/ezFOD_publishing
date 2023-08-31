@@ -80,7 +80,7 @@ main {
     height: 100%;
 }
 
-/* 상단 네비게이션 */
+/* 상단 네비게이션 - gnb*/
 header {
     position: sticky;
     top: 0;
@@ -156,7 +156,7 @@ header .gnb-wrap .gnb .logo {
     flex-grow: 0;
     flex-shrink: 0;
     z-index: 98;
-    position: relative;
+    position: relative;   
 }
 
 .sidebar-right {
@@ -211,10 +211,45 @@ header .gnb-wrap .gnb .logo {
 }
 
 .side-wrap {
-    padding: 20px 30px;
+    padding: 20px 30px 100px 30px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
+    overflow: auto;
+    height: 100%;
+}
+
+.side-wrap::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.side-wrap::-webkit-scrollbar-thumb {
+    background: #CBCCCE;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.side-wrap::-webkit-scrollbar-button:vertical:end:decrement {
+    display: block;
+    height: 74px;
+}
+
+/* 스크롤바 숨기기 */
+.cover-bar {
+    width: 6px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transition: all .5s;
+    opacity: 1;
+    background-color: #ffffff;
+}
+
+.sidebar-left:hover .cover-bar {
+    opacity: 0;
+    -webkit-transition: all .5s;
 }
 
 .side-wrap .title-wrap {
@@ -224,7 +259,9 @@ header .gnb-wrap .gnb .logo {
 }
 
 .side-wrap .title-wrap p{
-    margin-top: 2px;
+    margin-top: 2px;    
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .side-wrap .graph-wrap {
@@ -248,7 +285,7 @@ header .gnb-wrap .gnb .logo {
 .side-wrap .text-wrap {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
 }
 
 .side-wrap .text-wrap div{
@@ -286,35 +323,7 @@ header .gnb-wrap .gnb .logo {
 }
 
 
-/* 중앙 컨텐츠 영역 */
-.content{
-    flex-grow: 1;
-    flex-shrink: 1;
-    overflow: auto;
-}
-
-.content::-webkit-scrollbar {
-    width: 8px; 
-}
-
-.content::-webkit-scrollbar-thumb {
-    background: #CBCCCE;
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 2px solid transparent;
-}
-
-.content::-webkit-scrollbar-button:vertical:start:decrement,
-.content::-webkit-scrollbar-button:vertical:start:increment {
-    display: block;
-    height: 24px;
-}
-
-.content::-webkit-scrollbar-button:vertical:end:decrement {
-    display: block;
-    height: 70px;
-}
-
+/* lnb 메뉴 */
 .content .lnb-wrap {
     position: fixed;
     z-index: 97;
@@ -369,16 +378,46 @@ header .gnb-wrap .gnb .logo {
     background-color: var(--Primary-700);
 }
 
+
+/* lnb 메뉴 있는 레아이웃 */
+.content{
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: auto;
+}
+
+.content::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #CBCCCE;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.content::-webkit-scrollbar-button:vertical:start:decrement,
+.content::-webkit-scrollbar-button:vertical:start:increment {
+    display: block;
+    height: 24px;
+}
+
+.content::-webkit-scrollbar-button:vertical:end:decrement {
+    display: block;
+    height: 70px;
+}
+
 .content .cont-wrap {
     padding: 74px 30px 100px 30px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
+    flex-direction: column;
     gap: 26px;
 }
 
 .content .cont-wrap .item {
     min-width: 600px;
-    flex-basis: 600px;
     flex-shrink: 1;
     flex-grow: 1; 
     -webkit-border-radius:8px;
@@ -386,12 +425,80 @@ header .gnb-wrap .gnb .logo {
     border-radius:8px;
 }
 
-.content .cont-wrap .item h5{
+
+/* lnb 메뉴 없는 레아이웃 */
+.content-type2{
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: auto;
+}
+
+.content-type2::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.content-type2::-webkit-scrollbar-thumb {
+    background: #CBCCCE;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.content-type2::-webkit-scrollbar-button:vertical:end:decrement {
+    display: block;
+    height: 70px;
+}
+
+.content-type2 .cont-wrap {
+    padding: 30px 30px 100px 30px;
+    display: flex;
+    flex-wrap: wrap;    
+    flex-direction: column;
+    gap: 26px;
+}
+
+.content-type2 .cont-wrap .item {
+    min-width: 600px;
+    flex-shrink: 1;
+    flex-grow: 1; 
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+}
+
+.conten-type2 .cont-wrap .item h5{
     margin-bottom: 10px;
     margin-top: -10px;
 }
 
-.content .cont-wrap .item .table-box { 
+.cont-wrap .item-row {
+    display: flex;
+    flex-wrap: wrap;    
+    flex-direction: row;
+    gap: 26px;
+}
+
+.cont-wrap .item-row .item{
+    min-width: 600px;
+    flex-shrink: 1;
+    flex-grow: 1; 
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+}
+
+.cont-wrap .item-row .item:nth-child(2) {
+    flex-grow: 3;
+}
+
+
+/* 중앙 컨텐츠 영역 */
+.cont-wrap .item h5{
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.cont-wrap .item .table-box { 
     -webkit-border-radius:8px;
     -moz-border-radius:8px;
     border-radius:8px;
@@ -400,7 +507,18 @@ header .gnb-wrap .gnb .logo {
     background-color: var(--white);
 }
 
-.content .cont-wrap .item .btn-box {
+.cont-wrap .item .table-box::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.cont-wrap .item .table-box::-webkit-scrollbar-thumb {
+    background: #CBCCCE;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.cont-wrap .item .btn-box {
     margin-top: 16px;
     display: flex;
     justify-content: space-between;
@@ -411,7 +529,7 @@ header .gnb-wrap .gnb .logo {
     user-select: none;
 }
 
-.content .cont-wrap .item .graph-box { 
+.cont-wrap .item .graph-box { 
     -webkit-border-radius:8px;
     -moz-border-radius:8px;
     border-radius:8px;
@@ -420,6 +538,44 @@ header .gnb-wrap .gnb .logo {
     background-color: var(--white);
     padding: 26px;
 }
+
+.cont-wrap .item .calendar-box {
+    width: 100%; 
+    border: 1px solid var(--border-light);
+    background-color: var(--white);
+}
+
+.cont-wrap .item .title-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+}
+
+.cont-wrap .item .title-box .calendar-caption {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+.cont-wrap .item .title-box .calendar-caption p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.cont-wrap .item .title-box .calendar-caption div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+
 
 /* 좌우 패널 없는 레이아웃 (1.1 분류현황) */
 .content .cont-wrap .item-left {

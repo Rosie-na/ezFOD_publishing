@@ -30,7 +30,7 @@ label {
     margin-bottom: 0px;
 }
 .label-radio, .label-checkbox {
-    color: var(--text-secondary) !important;
+    color: var(--text-secondary);
     cursor: pointer;
 }
 
@@ -174,8 +174,16 @@ input[type="checkbox"]:checked:after {
 .checkbox-wrap {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-start;    
+    flex-wrap: wrap;
     gap: 14px;
+}
+
+.input-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6px;
 }
 
 
@@ -273,6 +281,33 @@ option[value=""][disabled] {
     display:none
 }
 
+select.select-s {
+    -webkit-border-radius: 6px !important;
+    -moz-border-radius: 6px !important;
+    border-radius: 6px !important;
+    border: 0px solid var(--input-border-normal);
+    background: #ffffff00 no-repeat;
+    vertical-align: middle;
+    padding: 0px;
+    font-family:'Pretendard', 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-tertiary);
+	width: 80px;
+    height: 22px;
+    cursor: pointer;
+}
+
+select.select-s:hover {    
+    font-weight: 500;
+    color: var(--text-secondary) !important;
+} 
+
+select.select-s:focus {
+    font-weight: 500;
+    color: var(--text-secondary) !important;
+} 
+
 
 /* button */
 button {
@@ -304,7 +339,7 @@ button:focus {
 .btn-primary-l {
     background-color: var(--btn-primary-fill-normal);
     color: var(--text-white);
-    padding: 0 20px;
+    padding: 10px 20px;
     font-size: 15px;
     font-weight: 500;
 	min-width: 90px;
@@ -419,7 +454,7 @@ button:focus {
 .btn-modal, .btn-modal:link, .btn-modal:visited {
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-secondary) !important;
     text-decoration: underline;
 }
