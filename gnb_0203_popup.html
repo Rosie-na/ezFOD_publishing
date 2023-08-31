@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ezFOD 샘미트코리아</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+	    <meta name="description" content="ezFOD 샘미트코리아">
+        <link href="css/common.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/sidebar.js"></script>
+    </head>
+
+    <body>
+        <div class="align-center txt18 mT70">
+            <a class="btn-open" href="#modal01">수급정보 팝업창(클릭)</a>
+        </div>
+
+        <!-- 모달 팝업창 영역 시작-->
+        <div class="modal-bg" onClick="javascript:popClose();"></div>
+        <div id="modal01" class="modal-wrap-type1">
+            <div class="head-wrap">
+                <div class="title">
+                    <h5 class="mR5">도드람 수급정보</h5>
+                </div>
+                <button class="modal-close" onClick="javascript:popClose();"></button>
+            </div>
+            <div>
+                <div class="align-right"><p class="caption"> </p></div>
+                <div class="board-type3">
+                    <table>
+                        <colgroup>
+                            <col style="width:13%;" />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>등급</th>
+                                <th>전체(두)</th>
+                                <th>암(두)</th>
+                                <th>수(두)</th>
+                                <th>거세(두)</th>
+                                <th>평균 도체중(kg)</th>
+                                <th>평균 등지방두께(mm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>전체</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1+</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>등외</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- 모달 팝업창 영역 끝-->
+    </body>
+
+    <!-- 모달 팝업창 시작-->
+    <script>
+        $('.btn-open').each(function() {
+            var modalID = $(this).attr('href');
+            var modalBg = $('.modal-bg');
+        
+            $(this).on('click', function(e) {
+                e.preventDefault();
+
+                modalBg.fadeIn();
+                
+                $(modalID).show();
+
+                $('html').css({overflow: 'hidden'});
+            });
+
+            $('.modal-bg, .modal-close').on('click', function() {
+                modalBg.fadeOut();
+                $(modalID).hide();
+                $(modalID).removeAttr('style');
+
+                $('html').removeAttr('style');
+            });
+	    });
+    </script>
+    <!-- 모달 팝업창 끝-->
+
+</html>
