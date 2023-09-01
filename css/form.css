@@ -35,7 +35,7 @@ label {
 }
 
 /* input */
-input[type=text], input[type=number] {
+input[type=text], input[type=number], input[type=password] {
     box-sizing: border-box; 
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -59,15 +59,26 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
     box-sizing: border-box; 
     -webkit-border-radius:8px;
     -moz-border-radius:8px;
     border-radius:8px;
+    border-radius:8px;
     border: 1px solid var(--input-border-normal);
     background-color: var(--input-bg-normal);
     padding: 10px 12px;
-    min-height: 80px;
+    font-family:'Pretendard', 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-secondary);
+	min-width: 100px;
 	width: 100%;
+    resize: none;
 } 
 
 input:focus, textarea:focus {
@@ -508,4 +519,39 @@ button:focus {
     background: var(--bg-white)!important;
     border: 1px solid var(--border-normal);
     box-shadow: 2px 2.5px 5.500000476837158px 0px rgba(0, 0, 0, 0.05);
+}
+
+/* 토글 스위치 */
+.toggleSwitch {
+  width: 46px;
+  height: 26px;
+  display: block;
+  position: relative;
+  border-radius: 30px;
+  background-color: var(--gray-300);
+  cursor: pointer;
+}
+
+.toggleSwitch .toggleButton {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.toggleSwitch.active {
+  background: var(--Primary-700);
+}
+
+.toggleSwitch.active .toggleButton {
+  left: calc(100% - 23px);
+  background: #fff;
+}
+
+.toggleSwitch, .toggleButton {
+  transition: all 0.2s ease-in;
 }

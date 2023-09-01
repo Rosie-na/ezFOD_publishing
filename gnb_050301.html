@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ezFOD 샘미트코리아</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+	    <meta name="description" content="ezFOD 샘미트코리아">
+        <link href="css/common.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/sidebar.js"></script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header>
+                <!-- 상단 메뉴 영역 시작-->
+                <div class="gnb-wrap">
+                    <div class="gnb">
+                        <h1 class="logo">ezFOD</h1>
+                        <ul>
+                            <li><a href="#">품질관리</a></li>
+                            <li><a href="#">수급정보</a></li>
+                            <li><a href="#">출하정보</a></li>
+                            <li><a href="#">통계정보</a></li>
+                            <li class="active"><a href="#">환경설정</a></li>
+                        </ul>
+                    </div>
+                    <div class="util">
+                        <button type="button" class="btn-Line-gray-s">로그아웃</button>
+                    </div>
+                </div>
+                <!-- 상단 메뉴 영역 끝-->
+            </header>
+            
+            <main>
+                <!--컨텐츠 영역 시작-->
+                <section class="content">
+                    <div class="lnb-wrap">
+                        <div class="lnb">
+                            <ul>
+                                <li><a href="#">농장관리</a></li>
+                                <li><a href="#">품질관리</a></li>
+                                <li class="active"><a href="#">시스템관리</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cont-wrap">
+                        <div class="item-row">
+                            <div class="item item-fix">                           
+                                <div class="title-box">
+                                    <div>
+                                        <h5>시스템 상태</h5>
+                                    </div>
+                                </div>
+                                <!--시스템 상태 영역 시작-->
+                                <div class="state-box">
+                                    <div class="box">
+                                        <div>
+                                            <img src="images/CCTV.png" class="mR5">
+                                            <h5>CCTV</h5>
+                                        </div>
+                                        <p class="tag-type2-red">연결끊김</p>
+                                    </div>
+                                    <div class="box">
+                                        <div>
+                                            <img src="images/AImodel.png" class="mR5">
+                                            <h5>AI 모델</h5>
+                                        </div>
+                                        <p class="tag-type2-red">연결끊김</p>
+                                    </div>
+                                    <div class="box">
+                                        <div>
+                                            <img src="images/HDD.png" class="mR5">
+                                            <h5>하드드라이브</h5>
+                                        </div>
+                                        <p class="tag-type2-blue">정상</p>
+                                    </div>
+                                </div>
+                                <!--시스템 상태 영역 끝-->
+                            </div>
+
+                            <div class="item item-right">                           
+                                <div class="title-box">
+                                    <div>
+                                        <h5>CCTV 목록</h5>
+                                    </div>                         
+                                    <select class="select-s align-right mR3" name="정렬" required>
+                                        <option>카메라명순</option>
+                                        <option>등록순</option>
+                                    </select>
+                                </div>
+                                <!--목록 리스트 영역 시작-->
+                                <div class="table-box">
+                                    <div class="board-type1">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:60px;" />
+                                                <col style="width:15%;" />
+                                                <col style="width:35%;" />
+                                                <col />
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" id=""></th>
+                                                    <th>카메라명</th>
+                                                    <th>RTSP</th>
+                                                    <th>연결상태</th>
+                                                    <th>등록일자</th>
+                                                    <th>수정일자</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-red">연결끊김</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td>2023.07.10</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" id=""></td>
+                                                    <td>camera1</td>
+                                                    <td>rtsp://admin:a1111111@wiselake33.iptime.org:570</td>
+                                                    <td><p class="tag-type2-blue">연결</p></td>
+                                                    <td>2023.06.30</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--목록 리스트 영역 끝-->
+
+                                <!--페이지네이션/버튼 영역 시작-->
+                                <div class="btn-box">
+                                    <div>
+                                        <button type="button" class="btn-Line-gray-m mR5">선택 삭제</button>
+                                    </div>
+                                    <div> 
+                                        <ul class="page-num">
+                                            <li class="first"><a href="#"><img src="images/icon/chevrons-left-s.svg"></a></li>
+                                            <li class="prev"><a href="#"><img src="images/icon/chevron-left-s.svg"></a></li>
+                                            <li><a href="#" class="active">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li class="next"><a href="#"><img src="images/icon/chevron-right-s.svg"></a></li>
+                                            <li class="last"><a href="#"><img src="images/icon/chevrons-right-s.svg"></a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn-primary-m">등록</button>
+                                    </div>                                    
+                                </div>
+                            <!--페이지네이션/버튼 영역 끝-->
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
+                <!--컨텐츠 영역 끝-->
+
+                <!--우측 사이드바 영역 시작-->
+                <section class="sidebar-right sidebar-w30">
+                    <!--기본상태 (CCTV를 선택하지 않은 상태) 영역 시작-->
+                    <div class="side-wrap side-wrap-right" style="display: none;">
+                        <div class="title-wrap">
+                            <h5>CCTV 정보</h5>
+                        </div>
+                        <div class="sub-wrap mT300">
+                            <img src="images/icon/file-text-2.svg" style="width: 36px;
+                            height: 36px;">
+                            <p>CCTV 정보가 없습니다.</p>
+                        </div>
+                    </div>
+                    <!--기본상태 (CCTV를 선택하지 않은 상태) 영역 끝-->
+
+                    <div class="btn-wrap">
+                        <button type="button" class="hide-sidebar-right" style="display: none;">
+                            <img src="images/icon/chevron-right.svg">
+                        </button>
+                        
+                        <button type="button" class="show-sidebar-right" >
+                            <img src="images/icon/chevron-left.svg">
+                        </button>
+                    </div>
+                </section>
+                <!--우측 사이드바 영역 끝-->
+            </main>
+
+        </div>
+    </body>
+</html>

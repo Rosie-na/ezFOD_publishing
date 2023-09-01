@@ -80,6 +80,44 @@ main {
     height: 100%;
 }
 
+
+/* 로그인 레이아웃 */
+.login-wrap {
+    width: 380px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    background: var(--bg-white);
+    padding: 40px;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.login-wrap .login-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-wrap .login-content .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-wrap .login-content .login-form label{
+    color: var(--text-tertiary);
+}
+
+
 /* 상단 네비게이션 - gnb*/
 header {
     position: sticky;
@@ -425,6 +463,10 @@ header .gnb-wrap .gnb .logo {
     border-radius:8px;
 }
 
+.content .cont-wrap .item-fix {
+    min-width: 280px !important;
+}
+
 
 /* lnb 메뉴 없는 레아이웃 */
 .content-type2{
@@ -489,6 +531,10 @@ header .gnb-wrap .gnb .logo {
 
 .cont-wrap .item-row .item:nth-child(2) {
     flex-grow: 3;
+}
+
+.cont-wrap .item-row .item-right {
+    flex-grow: 10 !important;
 }
 
 
@@ -574,6 +620,153 @@ header .gnb-wrap .gnb .logo {
     align-items: center;
     gap: 5px;
     
+}
+
+.cont-wrap .state-box { 
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cont-wrap .state-box .box { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    border: 1px solid var(--border-light);
+    background-color: var(--white);
+    padding: 20px;
+}
+
+.cont-wrap .state-box .box > div{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.cont-wrap .state-box .box > div > h5{ 
+    margin: 0px !important;
+}
+
+
+/* (5.2 환경설정-품질관리) 레이아웃 */
+.content .setting-wrap {
+    padding: 74px 30px 100px 30px;
+    display: flex; 
+    flex-direction: column;
+    gap: 16px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.content .setting-wrap .item {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-grow: 1; 
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    border: 1px solid var(--border-light);
+    background-color: var(--white);
+}
+
+.content .setting-wrap .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 1;
+    flex-grow: 1; 
+    padding: 12px 20px;
+    height: 70px;
+}
+
+.content .setting-wrap .item-header.active  {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.content .setting-wrap .item-more {
+    display: flex;
+    flex-direction: column;    
+    gap: 16px;
+    padding: 20px 30px 20px 60px;
+}
+
+.content .setting-wrap .item-more .list{
+    display: flex;    
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    border: 1px solid var(--border-light);
+    background-color: var(--gray-100);
+    padding: 18px;
+}
+
+.content .setting-wrap .item-more .list > .top {    
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.content .setting-wrap .item-more .list > .bottom {    
+    display: flex;
+    align-items: center;
+    padding: 0 60px
+}
+
+.content .setting-wrap .item-more .list > .bottom > input{    
+    width: 88px;
+}
+
+.content .setting-wrap .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.content .setting-wrap .text-title{
+    color: var(--text-normal);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.content .setting-wrap .text-sub{
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.content .setting-wrap .text-delete{
+    color: var(--red-900);
+    font-size: 14px;
+    font-weight: 500;
+    width: 60px;
+    text-align: right;
+}
+
+.content .setting-wrap .text-add{
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.setting-wrap .btn-box {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
 }
 
 
